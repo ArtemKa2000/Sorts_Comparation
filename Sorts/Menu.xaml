@@ -1,0 +1,72 @@
+﻿<Window x:Class="Sorts.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sorts"
+        mc:Ignorable="d"
+        Title="Меню" Height="600" Width="1200" WindowState="Maximized" FontFamily="Times New Roman" Icon="Images/LIT-.ico" Closed="Window_Closed" > 
+    <Window.Background>
+        <ImageBrush ImageSource="Images/Background.jpg" />
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="1" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="0,25,0,0">Курсова робота</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Top">на тему:</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" FontSize="24" FontWeight="SemiBold" TextAlignment="Center">Порівняльний аналіз ефективності різних алгоритмів сортування масивів в залежності від початкового стану масиву</TextBlock>
+            <Button Name="LogOut" Margin="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Foreground="{x:Null}" BorderBrush="{x:Null}" Click="LogOut_Click" Background="{x:Null}">
+                <Image Source="Images/LogOut2.png"></Image>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"></RowDefinition>
+                <RowDefinition Height="1.1*"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock MouseDown="tb_SortsStatistics_MouseDown" Name="tb_SortsStatistics" Grid.Row="1" TextAlignment="Center" FontSize="30" FontWeight="Bold" FontStyle="Italic" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" VerticalAlignment="Center">Порівняння сортувань</TextBlock>
+            <TextBlock MouseDown="tb_WrongPair_MouseDown" Name="tb_WrongPair" Grid.Row="1" Grid.Column="1" TextAlignment="Center" FontSize="30" FontWeight="Bold" FontStyle="Italic" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" VerticalAlignment="Center">Впорядкованість масиву</TextBlock>
+            <TextBlock TextAlignment="Center" MouseDown="tb_CountingSort_MouseDown" Name="tb_CountingSort" Grid.Row="1" Grid.Column="2"  FontSize="30" FontWeight="Bold" FontStyle="Italic" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" VerticalAlignment="Center" TextWrapping="Wrap" >Ефективність cортування підрахунком</TextBlock>
+            <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.9*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock  Name="tb_Theory" TextAlignment="Center" FontSize="33" FontWeight="Bold" FontStyle="Italic" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" VerticalAlignment="Top" MouseDown="tb_Theory_MouseDown"  HorizontalAlignment="Right">Теорія</TextBlock>
+                <TextBlock  Name="tb_Visualization" Grid.Column="2" TextAlignment="Center" FontSize="30" FontWeight="Bold" FontStyle="Italic" MouseEnter="TextBlock_MouseEnter" MouseLeave="TextBlock_MouseLeave" VerticalAlignment="Top" HorizontalAlignment="Left" MouseDown="tb_Visualization_MouseDown">Візуалізація</TextBlock>
+                <Grid Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,15,15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock TextAlignment="Right" FontSize="20">Роботу виконав: ліцеїст 10-Г класу</TextBlock>
+                    <TextBlock Grid.Row="1" TextAlignment="Right" FontSize="20">Каманцев Артем Сергійович</TextBlock>
+                    <TextBlock Grid.Row="2" TextAlignment="Right" FontSize="20">Керівник:</TextBlock>
+                    <TextBlock Grid.Row="3" TextAlignment="Right" FontSize="20">Ентін Йосиф Абрамович</TextBlock>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

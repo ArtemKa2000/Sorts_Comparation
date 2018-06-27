@@ -1,0 +1,52 @@
+﻿<Window x:Class="Sorts.WrongPair"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sorts"
+        xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:dvc="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        mc:Ignorable="d"
+        Title="Впорядкованість масиву" Height="600" Width="1200" WindowState="Maximized" Icon="Images/LIT-.ico" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#FFF3F3F3" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.7*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Margin="10,10" TabIndex="2" Grid.Column="0" Name="button_Back"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" ToolTip="До головного меню" Click="button_Back_Click">
+                <Image Source="Images/Back.png" />
+            </Button>
+            <Label Grid.Column="1" FontSize="20" FontFamily="Times New Roman" Content="Кількість елементів:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox TabIndex="3" Grid.Column="2"  x:Name="tb_elementCount" Text="25" FontSize="25" FontFamily="Times New Roman" Background="{x:Null}" BorderBrush="Black"  Foreground="Black" SelectionBrush="#FFC1B7B7" VerticalContentAlignment="Center" CaretBrush="Black" VerticalAlignment="Center" Padding="5"/>
+            <Label Grid.Column="3" Content="Масивів для розрахунку:" FontSize="20" FontFamily="Times New Roman" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Padding="5" TabIndex="4" Grid.Column="4" Name="tb_WrongPairAccuracy"  Margin="0,10" FontSize="25" FontFamily="Times New Roman" Background="{x:Null}" BorderBrush="Black" Foreground="Black" SelectionBrush="#FFC1B7B7" VerticalContentAlignment="Center" Text="5" CaretBrush="Black" VerticalAlignment="Center"/>
+            <Button TabIndex="0" Grid.Column="5" FontFamily="Times New Roman" Name="Button_WrongPair" Content="Побудувати графік"  FontSize="20" Margin="15,15,5,15" Click="Button_WrongPair_Click"/>
+            <Button TabIndex="1" Grid.Column="6" Name="Button_Clear" Content="Очистити"  FontSize="20" FontFamily="Times New Roman" Margin="10,15" Click="Button_Clear_Click"/>
+        </Grid>
+        <WindowsFormsHost  x:Name="host" Grid.Row="1">
+            <dvc:Chart x:Name="chart" Dock="Fill" BackgroundImageLayout="None">
+                <dvc:Chart.Legends>
+                    <dvc:Legend/>
+                </dvc:Chart.Legends>
+                <dvc:Chart.ChartAreas >
+                    <dvc:ChartArea Name="Data" />
+                </dvc:Chart.ChartAreas>
+            </dvc:Chart>
+        </WindowsFormsHost>
+    </Grid>
+</Window>
